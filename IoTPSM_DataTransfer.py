@@ -3,6 +3,8 @@ import socket
 import time
 import uuid 
 import datetime
+import sys
+VERSION = sys.version
 
 HOST = "37.50.200.7"
 #HOST = "MYHOST"
@@ -25,7 +27,10 @@ myrandom = uuid.uuid4().hex.upper()[0:BytesRamdomLength]
 
 #concatenate the delay value in hex and the random string and transcode it into byte string
 PAYLOAD = (str(DELAY_hex_4) + str(myrandom))
-PAYLOAD = bytes(PAYLOAD, encoding='utf8')
+if "2.7." in VERSION:
+    PAYLOAD = bytes(PAYLOAD)
+else:
+    PAYLOAD = bytes(PAYLOAD, encoding='utf8')
 
 if "UDP" in PROTOCOL:
     print("Doing UDP Test")
