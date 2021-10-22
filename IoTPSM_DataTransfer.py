@@ -5,15 +5,15 @@ import uuid
 import datetime
 
 HOST = "37.50.200.7"
-#HOST = "MYHOST"
+HOST = "MYHOST"
 PORT = 5005
-#PORT = MYPORT
+PORT = MYPORT
 PROTOCOL = "UDP"
-#PROTOCOL = "MYPROTOCOL"
+PROTOCOL = "MYPROTOCOL"
 DELAY = 5
-#DELAY = MYDELAY
+DELAY = MYDELAY
 BytesRamdomLength = 200
-#BytesRamdomLength = MYRANDOMLENGTH
+BytesRamdomLength = MYRANDOMLENGTH
 
 #first 4 bytes (here 0027) are the DELAY in hex encoded (0027 means 39 seconds)
 #calculate from number "DELAY" a HEX value and fill it up to 4 digits (Stellen)
